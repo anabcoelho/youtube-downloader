@@ -1,4 +1,5 @@
 yt-dlp>=2025.7.21
 streamlit
-pytube
+streamlit
+pytube==15.0.0
 requests
