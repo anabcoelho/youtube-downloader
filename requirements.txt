@@ -1,2 +1,3 @@
 yt-dlp>=2025.7.21
 streamlit
+pytube
