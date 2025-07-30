@@ -45,10 +45,10 @@ if st.button("Baixar"):
                     )
 
                 # ⚠️ Apagar o arquivo depois de pequeno atraso
-                time.sleep(1)  # Espera garantir que download começou
+                time.sleep(30)  # Espera garantir que download começou
                 if os.path.exists(mp3_path):
                     os.remove(mp3_path)
-                    st.info("🗑️ Arquivo temporário removido com sucesso.")
+                    
 
             except Exception as e:
                 st.error(f"❌ Erro: {e}")
