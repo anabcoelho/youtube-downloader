@@ -10,7 +10,11 @@ os.makedirs(BASE_DIR, exist_ok=True)
 
 def download_audio(url):
     ydl_opts = {
-        'format': 'bestaudio/best',
+    'format': 'bestaudio/best',
+    'https_headers': {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+    },
+    'verbose': True,
         'ffmpeg_location': ffmpeg_path,
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
