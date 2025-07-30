@@ -10,19 +10,19 @@ os.makedirs(BASE_DIR, exist_ok=True)
 
 def download_audio(url):
     ydl_opts = {
-    'format': 'bestaudio/best',
-    'https_headers': {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
-    },
-    'verbose': True,
+        'format': 'bestaudio/best',
         'ffmpeg_location': ffmpeg_path,
+        'http_headers': {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0'
+        },
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
             'preferredquality': '192',
         }],
-        'outtmpl': f'{BASE_DIR}/%(title)s.%(ext)s',
+        'outtmpl': f'{output_directory}/%(title)s.%(ext)s',
     }
+
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=True)
